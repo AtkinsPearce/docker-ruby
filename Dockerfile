@@ -1,4 +1,4 @@
-FROM circleci/ruby:2.6.4-node-browsers
+FROM circleci/ruby:3.0.1-node-browsers
 
 USER root
 
