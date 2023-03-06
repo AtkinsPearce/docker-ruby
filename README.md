@@ -9,6 +9,7 @@ The last one includes Ruby 3.1.3 version
 
 To build the Image just execute this command in the folder that contains Dockerfile
 
+cd to version folder 3.1.3 and run
 docker image build -t atkinsandpearce/ruby:3.1.3-browsers-mssql .
 And than publish to Dockerhub
 docker push atkinsandpearce/ruby:3.1.3-browsers-mssql
