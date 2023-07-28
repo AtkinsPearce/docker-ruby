@@ -1,5 +1,6 @@
 FROM cimg/ruby:3.1.0-browsers
 
+# create github user to match GitHub Actions user ids (avoids permissions mismatches between host and container user)
 RUN sudo groupadd --gid=1002 runner && \
 	sudo useradd --uid=1001 --gid=runner --create-home runner && \
 	echo 'runner ALL=NOPASSWD: ALL' | sudo tee -a /etc/sudoers.d/51-runner
@@ -50,6 +51,6 @@ ENV PATH="$GEM_HOME/bin:$BUNDLE_PATH/gems/bin:$PATH"
 RUN mkdir /home/runner/.rubygems
 RUN mkdir /home/runner/project
 
-# create github user to match GitHub Actions user ids
 RUN git config --global --add safe.directory '*'
+
 WORKDIR /home/runner/project
